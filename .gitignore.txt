@@ -6,3 +6,4 @@ temp/
 
 security/
 Week_1/2_docker_sql/data/
+Week_1/homework/data/
