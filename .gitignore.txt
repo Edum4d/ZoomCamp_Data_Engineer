@@ -5,3 +5,4 @@
 temp/
 
 security/
+Week_1/2_docker_sql/data/
