@@ -7,3 +7,4 @@ temp/
 security/
 Week_1/2_docker_sql/data/
 Week_1/homework/data/
+Week_1/2_docker_sql/ny_taxi_postgres_data/
