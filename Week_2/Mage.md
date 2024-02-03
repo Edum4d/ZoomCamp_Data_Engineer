@@ -1,0 +1,16 @@
+Mage was built with a lot of these principles in mind Flow State feedback loops and cognitive load.  It's an open source Tool for orchestrating transforming and integrating your data and when we say integrating your data. 
+
+Projects -> pipelines -> blocks -> load/transform/Export
+Pipelines are like dags or data workflows and then each pipeline is comprised of blocks and blocks are sort of the atomic units that make up a transformation. We use blocks to export transform or load data and so this might seem pretty simple and it it really is but Mage brings a lot of unique functionality out of the box and that's blocks like sensors which can  trigger on some event conditionals which have branching logic and then if else logic as well. 
+
+Dynamic blocks that can create Dynamic children and web hooks for additional functionality. Data integration the concept of unified pipelines or passing objects between your data pipelines. 
+
+So you can develop purely inv vs code and that'll sync that'll flow right through to the user interface and blocks being sort of testable. Reusable pieces of code make them ideal for software engineering best practice practices and through these principles through this.
+
+There's fully featured observability capability including integration with DBT for complet lineage complete view of your data pipelines.  
+
+Mage projects is sort of like the overall unit of an environment your. Mage environment can have multiple projects basically and then within a project. We have pipelines and each project can have as many pipelines as you want. A mage project has pipelines and then within pipelines. We have blocks and blocks can do all kinds of stuff right so projects  form all the bases for the work you're going be doing a mage. It's like a GitHub repo. It contains the code for your pipelines. Your blocks your. Other assets and a mage instance can have one or more projects.
+
+Basically pipelines on the other hand are workflows that perform some operation moving data from X to Y cleaning data transforming data staging data Etc. Each pipeline is actually just represented through yaml in the pipelines folder of your project so you could even think about ways to dynamically create pipelines or template pipelines or have some like code based automation. That's creating these pipelines for you and finally blocks or F just files really like python files SQL files R files that can be executed independently or within a pipeline and so these blocks as a part of a pipeline form a directed a slip clip graph a workflow and so the block is obviously managed. The dependencies are managed through Mage and so it's important to mention that these are really just small pieces of code that Mages orchestrating it's a data orchestrator right and so because a block is a file changing it in one place means you're changing it everywhere else but that's also cool because you might do the same operation in many different pipelines instead of writing the same code multiple times which is not a best practice. 
+
+Anatomy jut declaring what we need for this block. Then we have a decorator. This block is a data loader so we're declaring it as such  third. We have a function that returns a data frame. Last we have a test or an assertion.
