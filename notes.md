@@ -1,0 +1,1 @@
+Declaring variables for pandas can reduce memory consumption
