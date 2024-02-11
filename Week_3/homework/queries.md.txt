@@ -1,0 +1,58 @@
+External table
+create or replace external TABLE `dtcde-course.greentaxi.green_taxi_2020`
+OPTIONS(
+ format= "parquet",
+ uris=["gs://mage-zoomcamp-edumad/green_taxi_2020/green_tripdata_2022-*.parquet"]
+)
+-----------
+table 
+CREATE TABLE `dtcde-course.greentaxi.green_taxi_2020_table`
+AS
+SELECT
+  *
+FROM
+  `dtcde-course.greentaxi.green_taxi_2020`;
+
+----
+
+
+Question 1:
+
+select count(VendorID) from `dtcde-course.greentaxi.green_taxi_2020`
+
+----
+
+question 2:
+select distinct count( PULocationID ) from `dtcde-course.greentaxi.green_taxi_2020_table`
+select distinct count( PULocationID ) from `dtcde-course.greentaxi.green_taxi_2020`
+----
+question3:
+select count( fare_amount  ) from `dtcde-course.greentaxi.green_taxi_2020` where fare_amount =0
+----
+question4:
+CREATE TABLE `dtcde-course.greentaxi.green_taxi_2020_table_partitioned_clustered_table`
+PARTITION BY DATE(lpep_pickup_datetime)
+CLUSTER BY PUlocationID
+AS
+SELECT *
+FROM `dtcde-course.greentaxi.green_taxi_2020`;
+----
+question 5:
+CREATE TABLE `dtcde-course.greentaxi.green_taxi_2020_table_partitioned`
+PARTITION BY DATE(lpep_pickup_datetime)
+AS
+-----
+SELECT DISTINCT `PUlocationID`
+FROM `dtcde-course.greentaxi.green_taxi_2020_table`
+
+WHERE DATE(lpep_pickup_datetime) >= '2022-06-01' 
+  AND DATE(lpep_pickup_datetime) <= '2022-06-30';
+
+-----
+SELECT *
+FROM `dtcde-course.greentaxi.green_taxi_2020`;
+SELECT DISTINCT `PUlocationID`
+FROM `dtcde-course.greentaxi.green_taxi_2020_table_partitioned`
+
+WHERE DATE(lpep_pickup_datetime) >= '2022-06-01' 
+  AND DATE(lpep_pickup_datetime) <= '2022-06-30';

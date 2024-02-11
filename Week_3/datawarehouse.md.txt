@@ -1,0 +1,45 @@
+
+Notes and Summaries:
+
+OLAP vs OLTP:
+
+OLTP: Online Transaction Processing, used for backend services, fast updates but small data.
+OLAP: Online Analytical Processing, for analytical purposes, discovering insights, larger data size.
+OLTP: Normalized data for efficiency, productivity for end-users.
+OLAP: Denormalized databases, productivity for analysts and executives.
+Data Warehouse:
+
+Used for reporting and data analysis.
+Comprises raw data, metadata, and summaries.
+Sources include operating systems, flat file systems, OLTP databases.
+Data marts provide interfaces for different user groups.
+BigQuery:
+
+Serverless data warehouse solution.
+Offers scalability, high availability, and no server management.
+Features: machine learning, geospatial data handling, business intelligence queries.
+Flexible storage model separates compute and storage, reducing costs.
+BigQuery Interface:
+
+Clean interface, project-based structure.
+Provides access to public datasets and allows querying them.
+Pricing models: on-demand based on data processed, flat rate based on slots.
+External Tables in BigQuery:
+
+Can create external tables from sources like Google Cloud Storage.
+Schema inference saves time but manual definition is possible.
+Considerations: data caching, size, and cost.
+Partitioning in BigQuery:
+
+Improves performance by processing only relevant data.
+Example: partitioning by creation date in Stack Overflow data.
+Partitioned tables reduce processing costs by processing smaller data subsets.
+Partition Details and Clustering:
+
+Information schema provides partition details.
+Clustering improves performance by grouping related data together.
+Example: Clustering by vendor ID in taxi trip data.
+Comparison of Partitioned and Clustered Tables:
+
+Querying partitioned and clustered tables reduces processing time and data volume.
+Example query on partitioned and clustered tables shows reduced processing time and data volume compared to non-partitioned tables.
